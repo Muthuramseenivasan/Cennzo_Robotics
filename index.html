@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Cennzo Robotix — Intelligence for every environment</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #fff;
+        color: #000;
+      }
+      img {
+        max-width: 100%;
+      }
+      [hidden]:not([hidden="until-found" i]) {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Page background, scroll progress bar and navigation -->
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div
+      id="sp"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--blue);
+        z-index: 30;
+        width: 0;
+      "
+    ></div>
+    <nav id="nv">
+      <a class="br" href="#"
+        ><img
+          class="logo"
+          src="assets/logo.png"
+          alt=""
+          width="34"
+          height="34"
+        />CENNZO ROBOTIX</a
+      >
+      <div class="lk">
+        <a href="#about">About</a><a href="#product">Product</a
+        ><a href="#video">WAFEE</a><a href="#apps">Applications</a
+        ><a href="#system">System</a>
+      </div>
+      <a class="btn nb" href="#cta">Build with us</a
+      ><button class="mb" id="mb" aria-label="Menu">☰</button>
+    </nav>
+    <!-- Hero: three auto-rotating slides -->
+    <header class="hero" id="hero">
+      <div class="sl on"><i style="background-image: var(--i0)"></i></div>
+      <div class="sl"><i style="background-image: var(--i1)"></i></div>
+      <div class="sl"><i style="background-image: var(--i2)"></i></div>
+      <div class="hc in" id="hc">
+        <div class="k" id="hk" style="opacity: 1; transform: none">
+          01 — HUMANOID PLATFORM
+        </div>
+        <h1 id="ht">WAFEE</h1>
+        <p id="hp">
+          Unified multi-environment humanoid platform, engineered for demanding
+          operations.
+        </p>
+        <div>
+          <a class="btn" href="#product">Explore WAFEE</a
+          ><a class="btn g" href="#video">Five elements</a>
+        </div>
+      </div>
+      <div class="pg" id="pg">
+        <button class="on"></button><button></button><button></button
+        ><span class="cue">SCROLL <b></b></span>
+      </div>
+    </header>
+    <!-- Marquee strip (words are filled in by script.js) -->
+    <div class="mq"><div id="mq"></div></div>
+    <!-- About: mission statement and stats -->
+    <section class="sec" id="about">
+      <div class="lb">THE MISSION</div>
+      <p class="big words">
+        Intelligence should not stop at the edge of the environment. We build
+        capable machines for the places where human exposure, complexity or
+        uncertainty make conventional approaches unsafe.
+      </p>
+      <div class="stats">
+        <div class="rv">
+          <b data-n="7">0</b><span>ENGINEERING DISCIPLINE</span>
+        </div>
+        <div class="rv"><b data-n="9">0</b><span>SYSTEM ATTRIBUTES</span></div>
+        <div class="rv"><b data-n="1">0</b><span>INTEGRATED SYSTEM</span></div>
+        <div class="rv">
+          <b data-n="24">0</b><span>HOURS · ALWAYS ON MISSION</span>
+        </div>
+      </div>
+    </section>
+    <!-- Product panels -->
+    <section class="pn" id="product">
+      <i data-p style="background-image: var(--i1)"></i>
+      <div class="t rv">
+        <div class="lb" style="color: #7fd0ff">WAFEE</div>
+        <h2>Beyond the hard places, into daily life</h2>
+        <p>One intelligent platform that moves, perceives, decides and acts.</p>
+        <a class="btn g" href="#apps">Learn more</a>
+      </div>
+    </section>
+    <section class="pn" id="wafee">
+      <i data-p style="background-image: var(--i2)"></i>
+      <div class="t rv">
+        <div class="lb" style="color: #7fd0ff">INFRASTRUCTURE</div>
+        <h2>Practical problems first</h2>
+        <p>Intelligent inspection for complex industrial environments.</p>
+        <a class="btn g" href="#apps">Explore application</a>
+      </div>
+    </section>
+    <!-- Why Cennzo -->
+    <section class="sec">
+      <div class="lb">WHY CENNZO</div>
+      <h2 class="big">Built as a system, not a demo.</h2>
+      <div class="cd">
+        <div class="c rv">
+          <em>01</em>
+          <h3>Integrated</h3>
+          <p>
+            Every subsystem is designed together so each one contributes to
+            mission performance.
+          </p>
+        </div>
+        <div class="c rv">
+          <em>02</em>
+          <h3>Modular</h3>
+          <p>
+            Hardware and software are designed to evolve without redesigning the
+            platform.
+          </p>
+        </div>
+        <div class="c rv">
+          <em>03</em>
+          <h3>Intelligent</h3>
+          <p>
+            Perception, planning and control are integrated to enable
+            increasingly autonomous operation.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Applications -->
+    <section class="sec" id="apps" style="padding-top: 20px">
+      <div class="lb">APPLICATIONS</div>
+      <h2 class="big">One platform. Every demanding environment.</h2>
+      <div class="ap">
+        <ul id="al"></ul>
+        <div class="pv" id="pv"></div>
+      </div>
+    </section>
+    <!-- WAFEE explorer: five elements -->
+    <section class="wx" id="video">
+      <div class="in">
+        <div class="lb">WAFEE</div>
+        <h2 class="big">One Intelligence. All Environment.</h2>
+        <p class="sub">
+          Engineered to operate in every environment, from the deep sea to the
+          edge of space. Tap an element to explore.
+        </p>
+        <div class="tabs" id="tabs"></div>
+        <div class="stage">
+          <div class="vis">
+            <div class="ph" id="ph"></div>
+            <canvas id="cv"></canvas>
+            <div class="tag" id="tg"></div>
+          </div>
+          <div class="inf" id="inf"></div>
+        </div>
+        <p class="note">
+          Figures are design targets from the Cennzo concept sheets.
+        </p>
+      </div>
+    </section>
+    <!-- System diagram -->
+    <section class="sec" id="system" style="text-align: center">
+      <div class="lb">THE SYSTEM</div>
+      <h2 class="big">Every subsystem. One intelligence.</h2>
+      <p class="sub" style="margin: 16px auto 0">
+        WAFEE is designed as one integrated system, where every subsystem
+        contributes to mission performance. Hover a node.
+      </p>
+      <div class="orb" id="orb"></div>
+    </section>
+    <!-- Call to action -->
+    <section class="cta" id="cta">
+      <h2>The next frontier is<br />not a place. It is a capability.</h2>
+      <p>We are building intelligent machines for the missions that matter.</p>
+      <a class="btn" href="#">Partner with Cennzo</a>
+    </section>
+    <!-- Marquee strip above the footer -->
+    <div class="mq mq-end"><div id="mq2"></div></div>
+    <!-- Footer -->
+    <footer>
+      <div class="fg">
+        <div>
+          <div class="br" style="color: #fff; margin-bottom: 16px">
+            <img
+              class="logo"
+              src="assets/logo.png"
+              alt=""
+              width="34"
+              height="34"
+            />CENNZO ROBOTIX
+          </div>
+          Building intelligent robotic systems for complex and demanding
+          environments.
+        </div>
+        <div>
+          <h4>EXPLORE</h4>
+          <a href="#">Home</a><a href="#">About</a><a href="#">WAFEE</a
+          ><a href="#">Technology</a>
+        </div>
+        <div>
+          <h4>COMPANY</h4>
+          <a href="#">Research &amp; Engineering</a><a href="#">Partnerships</a
+          ><a href="#">Investors</a><a href="#">Careers</a>
+        </div>
+        <div>
+          <h4>LEGAL</h4>
+          <a href="#">Privacy Policy</a><a href="#">Terms of Use</a
+          ><a href="#">Safety &amp; Compliance</a>
+        </div>
+      </div>
+      <div class="fb">
+        <span>© 2026 Cennzo Robotix. All rights reserved.</span
+        ><span
+          >The future belongs to machines that can understand the world, move
+          through it and act within it.</span
+        >
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  
+
+</body></html>
