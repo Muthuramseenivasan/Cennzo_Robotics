@@ -242,8 +242,9 @@ nav.open {
 .sl i {
   position: absolute;
   inset: 0;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   filter: contrast(1.06) saturate(1.08);
 }
 .sl.on i {
@@ -620,9 +621,6 @@ nav.open {
 .pv {
   aspect-ratio: 4/3;
   border-radius: 22px;
-  background-color: #0b1b2e;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: #0b1b2e;
   background-repeat: no-repeat;
   background-size: cover;
