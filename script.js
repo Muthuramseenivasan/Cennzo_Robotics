@@ -65,25 +65,42 @@ const HERO_SLIDES = [
   ],
 ];
 
-const MARQUEE_WORDS = [
-  "PERCEIVE",
-  "MOVE",
-  "DECIDE",
-  "ACT",
-  "INTEGRATED",
-  "MODULAR",
-  "INTELLIGENT",
-  "RESILIENT",
+// One format only: a single string per item.
+const MARQUEE_SPECS = [
+  "HEIGHT - 1800 MM",
+  "WEIGHT - 80 KG",
+  "OPERATING TIME - 10 HR",
+  "PAYLOAD CAPACITY - 15–25 KG",
+  "WALKING SPEED - 3 M/S",
+  "SWAP UP",
+  "OPTIMAL EFFICIENCY",
+  "TECHNOLOGY - AGI",
+];
+
+const MARQUEE_INDUSTRIES = [
+  "FACTORY",
+  "WAREHOUSE",
+  "E-COMMERCE",
+  "LOGISTICS",
+  "HOSPITALS",
+  "AGRICULTURE",
+  "HAZADAROUS PLACES",
+  "RESCUE",
+  "HOTELS",
+  "OFFICES",
+  "HOUSEHOLDS",
+  "ARMY AND NAVY",
+  "COLLEGE AND SCHOOLS",
 ];
 
 /** Application domains: [title, image variable defined in style.css] */
 const APPLICATIONS = [
   ["Emergency Support", "f"],
-  ["Infrastructure Inspection", "i2"],
-  ["Offshore & Marine Operations", "w"],
-  ["Search & Reconnaissance", "a"],
+  ["Research & Education", "i2"],
+  ["Medical & Health Care", "w"],
+  ["Off Shore & Marine", "a"],
   ["Remote Maintenance", "i1"],
-  ["Space & Planetary Robotics", "s"],
+  ["Rescue Operations", "s"],
 ];
 
 /**
@@ -102,16 +119,16 @@ const ELEMENTS = [
     name: "Water",
     color: "#0a8fe0",
     image: "w",
-    tag: "Subsea · Marine",
+    tag: "Deepsea · Marine",
     title: "Subsea inspection & maintenance",
     text: "Marine and offshore operations: inspection, cleaning and repair of submerged structures in wet, corrosive, low-visibility conditions, powered and linked by tether.",
     specs: [
-      ["Inspect", "Submerged structures"],
-      ["Clean", "Fouled surfaces"],
-      ["Light", "Onboard LEDs"],
-      ["Tools", "Hands & cutters"],
-      ["Tether", "Power & comms"],
-      ["Fins", "Underwater mobility"],
+      ["Inspect", "Submerged Monitoring"],
+      ["Clean", "	Underwater Cleaning"],
+      ["Research", "Underwater Exploration & Observation"],
+      ["Repair", "Robotic Arms & Precision Cutting"],
+      ["Rescue", "Emergency Retrieval & Assistance"],
+      ["Mapping", "Underwater Terrain Mapping"],
     ],
     features: ["Offshore assets", "Pipelines", "Hull & pier checks"],
   },
@@ -124,12 +141,12 @@ const ELEMENTS = [
     title: "Humanoid flight with jetpack",
     text: "Freedom to move, power to reach. AI balance control and a lightweight aerodynamic frame give the platform vertical take-off, stable hover and fast aerial response.",
     specs: [
-      ["4 × 40 kgf", "Jet engines"],
-      ["160 kgf", "Max thrust"],
-      ["60 km/h", "Max speed"],
-      ["1000 m", "Max altitude"],
-      ["15–20 min", "Flight time"],
-      ["120 kg", "Max take-off"],
+      ["Rescue", "Emergency Response"],
+      ["Survilence", "Aerial Monitoring"],
+      ["Delivery", "Payload Transportation"],
+      ["Defence", "Security & Protection"],
+      ["Flying", "Flight Endurance"],
+      ["Mapping", "Aerial Terrain Mapping"],
     ],
     features: ["Search & rescue", "High-rise maintenance", "Reconnaissance"],
   },
@@ -142,12 +159,12 @@ const ELEMENTS = [
     title: "Humanoid fire response robot",
     text: "Built to protect, engineered to endure. Detects, assesses and suppresses fires in extreme heat with thermal imaging, smoke navigation and a modular water/foam system.",
     specs: [
-      ["500 °C", "Max operating temp"],
-      ["50 L", "Water / foam tank"],
-      ["120 LPM", "Max flow rate"],
-      ["IP69K", "Protection"],
-      ["3–4 h", "Operating time"],
-      ["50 kg", "Payload"],
+      ["Rescue", "Emergency Victim Assistance"],
+      ["Fire Suppresion", "Water & Foam Deployment"],
+      ["Human Detection", "Thermal & Life Detection"],
+      ["Hazmat Cleaning", "	Hazardous Material Handling"],
+      ["Gas Detection", "Toxic Gas Monitoring"],
+      ["Structural Damage Assesment", "	Building Integrity Analysis"],
     ],
     features: ["Fire suppression", "Thermal imaging", "Hazard detection"],
   },
@@ -160,12 +177,12 @@ const ELEMENTS = [
     title: "Humanoid for Earth",
     text: "Engineered to live and work alongside humans. Walks with you, understands you, and handles errands, delivery, guidance and public-service support.",
     specs: [
-      ["180 cm", "Height"],
-      ["95 kg", "Weight"],
-      ["20 kg", "Payload"],
-      ["0–15 km/h", "Running speed"],
-      ["4–6 h", "Operating time"],
-      ["IP65", "Protection"],
+      ["Surviellence", "Terrain Monitoring"],
+      ["Grand Force", "Heavy Load Capacity"],
+      ["Field Operation", "All-Terrain Mobility"],
+      ["Hazadarous Rescue", "Emergency Rescue Operations"],
+      ["Excavation", "Ground Research"],
+      ["Human Protection", "Human Safety & Assistance"],
     ],
     features: [
       "Walking assistant",
@@ -182,12 +199,12 @@ const ELEMENTS = [
     title: "Space humanoid",
     text: "Designed for orbital operations, satellite servicing, station maintenance and deep-space missions, with free-fly, surface and manipulation modes.",
     specs: [
-      ["180 cm", "Height"],
-      ["100 kg", "Weight"],
-      ["42+", "Degrees of freedom"],
-      ["48 V DC", "Power system"],
-      ["−20 to 120 °C", "Operating temp"],
-      ["12–16×", "RCS thrusters"],
+      ["Sattelite Maintenance", "Orbital System Maintenance"],
+      ["Astro Operations", "Spacecraft Maneuvering"],
+      ["Lunar Operations", "Lunar Surface Exploration"],
+      ["Space Research", "Scientific Data Collection"],
+      ["Spaceship Operations", "Spacecraft Navigation & Control"],
+      ["Planet Research", "Planetary Exploration & Analysis"],
     ],
     features: ["Free-fly mode", "Surface mode", "Satellite servicing"],
   },
@@ -202,7 +219,7 @@ const SYSTEM_NODES = [
   "Sensing",
   "Control",
   "AI",
-  
+
 ];
 /* ==========================================================================
    3. Navigation
@@ -214,7 +231,7 @@ function initNavigation() {
   const menuButton = $("#mb");
   const progressBar = $("#sp");
 
-// Solid background once the page has scrolled.
+  // Solid background once the page has scrolled.
   addEventListener("scroll", () => nav.classList.toggle("s", scrollY > 60));
 
   // Reading progress bar along the top edge.
@@ -283,10 +300,15 @@ function initHeroSlider() {
    5. Marquees and reveal-on-scroll
    ========================================================================== */
 
-/** Fill both scrolling word strips (above "The Mission" and above the footer). */
+/** Fill the top specs strip and bottom industries strip. */
 function initMarquees() {
-  const strip = MARQUEE_WORDS.map((word) => `<span>${word}</span>`).join("");
-  $$("#mq, #mq2").forEach((element) => (element.innerHTML = strip + strip));
+  const renderItems = (items) =>
+    items.map((item) => `<span class="spec">${item}</span>`).join("");
+  const specifications = renderItems(MARQUEE_SPECS);
+  const industries = renderItems(MARQUEE_INDUSTRIES);
+
+  $("#mq").innerHTML = specifications + specifications;
+  $("#mq2").innerHTML = industries + industries;
 }
 
 /** Count a number up from 0 to its data-n value. */
@@ -309,6 +331,16 @@ function initScrollEffects() {
     paragraph.innerHTML = paragraph.textContent
       .split(" ")
       .map((word) => `<span class="w">${word}</span>`)
+      .join(" ");
+  });
+
+  $$(".quote-text").forEach((quote) => {
+    const words = quote.textContent.trim().split(/\s+/);
+    quote.innerHTML = words
+      .map(
+        (word, index) =>
+          `<span class="quote-word" style="--word-index:${index}">${word}</span>`,
+      )
       .join(" ");
   });
 
@@ -359,11 +391,9 @@ function initApplications() {
       item.classList.toggle("on", i === index),
     );
     preview.style.opacity = 0;
-    preview.style.transform = "scale(.97)";
     setTimeout(() => {
       preview.style.backgroundImage = `var(--${APPLICATIONS[index][1]})`;
       preview.style.opacity = 1;
-      preview.style.transform = "none";
     }, 300);
   }
 
@@ -707,8 +737,8 @@ function initSystemDiagram() {
    9. Animated page background
    --------------------------------------------------------------------------
    A fixed canvas behind the page: light-blue → white gradient, drifting
-   soft blobs, a floating particle network and click ripples. The gradient
-   and particles shift slowly as the page scrolls.
+   soft blobs and a floating particle network. The gradient and particles
+   shift slowly as the page scrolls.
    ========================================================================== */
 
 function initBackground() {
@@ -735,7 +765,6 @@ function initBackground() {
   let scrollTarget = 0;
   let scrollCurrent = 0; // eased toward scrollTarget
   let particles = [];
-  const ripples = [];
 
   const blobs = BLOB_COLORS.map((color) => ({
     color,
@@ -762,21 +791,6 @@ function initBackground() {
       r: 1.2 + rand() * 2.2,
       depth: 0.3 + rand() * 0.9,
     }));
-  }
-
-  // A click sends out a ripple and pushes nearby particles away.
-  function onPointerDown(event) {
-    ripples.push({ x: event.clientX, y: event.clientY, r: 0, a: 0.5 });
-    particles.forEach((p) => {
-      const dx = p.x - event.clientX;
-      const dy = p.y - event.clientY;
-      const distance = Math.hypot(dx, dy) || 1;
-      if (distance < 320) {
-        const force = (1 - distance / 320) * 9;
-        p.vx += (dx / distance) * force;
-        p.vy += (dy / distance) * force;
-      }
-    });
   }
 
   function drawGradient() {
@@ -811,28 +825,6 @@ function initBackground() {
       ctx.fillStyle = gradient;
       ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
     });
-  }
-
-  function drawRipples() {
-    for (let i = ripples.length - 1; i >= 0; i--) {
-      const ripple = ripples[i];
-      ripple.r += 6;
-      ripple.a *= 0.965;
-      if (ripple.a < 0.02) {
-        ripples.splice(i, 1);
-        continue;
-      }
-      ctx.beginPath();
-      ctx.arc(ripple.x, ripple.y, ripple.r, 0, TAU);
-      ctx.strokeStyle = `rgba(10,143,224,${ripple.a})`;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(ripple.x, ripple.y, ripple.r * 0.7, 0, TAU);
-      ctx.strokeStyle = `rgba(255,255,255,${ripple.a})`;
-      ctx.lineWidth = 6;
-      ctx.stroke();
-    }
   }
 
   function moveParticles() {
@@ -890,7 +882,6 @@ function initBackground() {
 
     drawGradient();
     drawBlobs();
-    drawRipples();
     moveParticles();
     drawParticles();
 
@@ -898,7 +889,6 @@ function initBackground() {
   }
 
   addEventListener("resize", resize);
-  addEventListener("pointerdown", onPointerDown, { passive: true });
   addEventListener(
     "scroll",
     () => {
@@ -920,6 +910,41 @@ function initBackground() {
   requestAnimationFrame(frame);
 }
 
+/** Start and restart the background product video when it is visible. */
+function initProductVideo() {
+  const video = $(".pn-video-file");
+  if (!video) return;
+
+  video.muted = true;
+  video.playsInline = true;
+
+  const playVideo = () => {
+    const playPromise = video.play();
+    if (playPromise) playPromise.catch(() => {});
+  };
+
+  video.addEventListener("canplay", playVideo);
+  video.addEventListener("ended", () => {
+    video.currentTime = 0;
+    playVideo();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) video.pause();
+    else playVideo();
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) playVideo();
+      else video.pause();
+    },
+    { threshold: 0.15 },
+  );
+  observer.observe(video);
+
+  playVideo();
+}
+
 /* ==========================================================================
    10. Start-up
    ========================================================================== */
@@ -932,3 +957,4 @@ initApplications();
 initElementsExplorer();
 initSystemDiagram();
 initBackground();
+initProductVideo();
