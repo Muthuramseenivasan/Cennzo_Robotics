@@ -64,9 +64,10 @@
         />CENNZO ROBOTIX</a
       >
       <div class="lk">
-        <a href="#about">About</a><a href="#product">Product</a
-        ><a href="#video">WAFEE</a><a href="#apps">Applications</a
-        ><a href="#system">System</a>
+        <a href="#about">About</a><a href="#product">Products</a
+        ><a href="#video">WAFEE</a><a href="#apps">Investors</a
+        ><a href="#system">Team</a>
+        <a href="#Career">Career</a>
       </div>
       <a class="btn nb" href="#cta">Build with us</a
       ><button class="mb" id="mb" aria-label="Menu">☰</button>
@@ -95,30 +96,48 @@
         ><span class="cue">SCROLL <b></b></span>
       </div>
     </header>
-    <!-- Marquee strip (words are filled in by script.js) -->
+    <!-- Specification strip (filled in by script.js) -->
     <div class="mq"><div id="mq"></div></div>
     <!-- About: mission statement and stats -->
     <section class="sec" id="about">
-      <div class="lb">THE MISSION</div>
-      <p class="big words">
-        Intelligence should not stop at the edge of the environment. We build
-        capable machines for the places where human exposure, complexity or
-        uncertainty make conventional approaches unsafe.
-      </p>
-      <div class="stats">
-        <div class="rv">
-          <b data-n="7">0</b><span>ENGINEERING DISCIPLINE</span>
+      <div class="mv">
+        <div class="mv-col rv">
+          <div class="lb">THE MISSION</div>
+          <p class="mv-text words">
+            Put capable machines where human exposure, operational complexity or
+            environmental uncertainty make conventional approaches inefficient or unsafe.
+          </p>
         </div>
-        <div class="rv"><b data-n="9">0</b><span>SYSTEM ATTRIBUTES</span></div>
-        <div class="rv"><b data-n="1">0</b><span>INTEGRATED SYSTEM</span></div>
-        <div class="rv">
-          <b data-n="24">0</b><span>HOURS · ALWAYS ON MISSION</span>
+        <div class="mv-col rv">
+          <div class="lb">THE VISION</div>
+          <p class="mv-text words">
+            A future where intelligent machines work alongside people in every environment, from the hardest places to everyday life.
+          </p>
         </div>
       </div>
+      <blockquote class="mission-quote rv">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <div class="quote-kicker">THE CENNZO PURPOSE</div>
+        <p class="quote-text">
+          We engineer intelligence beyond boundaries—building machines that
+          conquer environments, turn impossible missions into reality, and shape
+          a future where technology elevates humanity.
+        </p>
+      </blockquote>
     </section>
     <!-- Product panels -->
-    <section class="pn" id="product">
-      <i data-p style="background-image: var(--i1)"></i>
+    <section class="pn pn-video" id="product" aria-label="Cennzo in action">
+      <video
+        class="pn-video-file"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/img-i1.jpg"
+      >
+        <source src="assets/cennzo-video.mp4" type="video/mp4">
+      </video>
       <div class="t rv">
         <div class="lb" style="color: #7fd0ff">WAFEE</div>
         <h2>Beyond the hard places, into daily life</h2>
@@ -126,14 +145,15 @@
         <a class="btn g" href="#apps">Learn more</a>
       </div>
     </section>
-    <section class="pn" id="wafee">
-      <i data-p style="background-image: var(--i2)"></i>
-      <div class="t rv">
-        <div class="lb" style="color: #7fd0ff">INFRASTRUCTURE</div>
-        <h2>Practical problems first</h2>
-        <p>Intelligent inspection for complex industrial environments.</p>
-        <a class="btn g" href="#apps">Explore application</a>
-      </div>
+    <section class="video-quote-section" aria-label="Technology for humanity">
+      <blockquote class="mission-quote rv">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <div class="quote-kicker">BUILT FOR PEOPLE</div>
+        <p class="quote-text">
+          We don't build robots to replace humans; we build them to empower
+          humanity, simplify lives, and take on the challenges that hold us back.
+        </p>
+      </blockquote>
     </section>
     <!-- Why Cennzo -->
     <section class="sec">
@@ -141,27 +161,25 @@
       <h2 class="big">Built as a system, not a demo.</h2>
       <div class="cd">
         <div class="c rv">
-          <em>01</em>
-          <h3>Integrated</h3>
+          <em aria-hidden="true">🎯</em>
+          <h3>Accuracy</h3>
           <p>
-            Every subsystem is designed together so each one contributes to
-            mission performance.
+            Our robots are engineered for high-precision operations, delivering accurate results through intelligent sensing and advanced control systems.
+With real-time feedback and adaptive automation
           </p>
         </div>
         <div class="c rv">
-          <em>02</em>
-          <h3>Modular</h3>
+          <em aria-hidden="true">🛡️</em>
+          <h3>Trustworthy</h3>
           <p>
-            Hardware and software are designed to evolve without redesigning the
-            platform.
+            Our robots are built with reliability, safety, and transparency at their core, ensuring dependable performance in every operation.
           </p>
         </div>
         <div class="c rv">
-          <em>03</em>
-          <h3>Intelligent</h3>
+          <em aria-hidden="true">🤝</em>
+          <h3>Human Friendly</h3>
           <p>
-            Perception, planning and control are integrated to enable
-            increasingly autonomous operation.
+            Our robots are designed to work alongside humans,With intuitive interactions and human-centred technology, we create robots that adapt to people and support their needs.
           </p>
         </div>
       </div>
@@ -193,9 +211,7 @@
           </div>
           <div class="inf" id="inf"></div>
         </div>
-        <p class="note">
-          Figures are design targets from the Cennzo concept sheets.
-        </p>
+        
       </div>
     </section>
     <!-- System diagram -->
@@ -214,7 +230,7 @@
       <p>We are building intelligent machines for the missions that matter.</p>
       <a class="btn" href="#">Partner with Cennzo</a>
     </section>
-    <!-- Marquee strip above the footer -->
+    <!-- Specification strip above the footer -->
     <div class="mq mq-end"><div id="mq2"></div></div>
     <!-- Footer -->
     <footer>
